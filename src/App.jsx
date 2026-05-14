@@ -164,7 +164,7 @@ function ResumePage() {
           </div>
         </div>
 
-        {/*<span className="page-num">02</span>*/}
+        <span className="page-num">02</span>
       </main>
     </section>
   )
