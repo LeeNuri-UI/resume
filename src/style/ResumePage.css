@@ -315,136 +315,17 @@
 
 @media (max-width: 768px) {
   .resume-inner {
-    padding: 24px 18px;
-    gap: 16px;
+    padding: 40px 18px 18px 30px;
+    gap: 20px;
   }
 
   .section-header {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .section-header h1 {
-    font-size: 24px;
-    line-height: 1.1;
-  }
-
-  .desc {
-    font-size: 12px;
-    line-height: 1.6;
+    gap: 20px;
   }
 
   .two-col {
     grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .profile-card {
-    gap: 14px;
-    align-items: center;
-  }
-
-  .avatar {
-    width: 82px;
-    height: 82px;
-  }
-
-  .profile-info .name {
-    font-size: 16px;
-  }
-
-  .profile-info .role {
-    font-size: 12px;
-  }
-
-  .profile-info .meta {
-    font-size: 11px;
-    line-height: 1.7;
-  }
-
-  .timeline {
-    margin-top: 0;
-  }
-
-  .tl-item {
-    gap: 8px;
-    padding: 7px 0;
-  }
-
-  .tl-date {
-    width: 82px;
-    font-size: 11px;
-  }
-
-  .tl-text {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  .tl-text.muted {
-    font-size: 11px;
-  }
-
-  .info-box {
-    padding: 14px;
-    border-radius: 8px;
-  }
-
-  .info-box-header {
-    margin-bottom: 10px;
-    gap: 10px;
-  }
-
-  .info-box-header .badge {
-    font-size: 12px;
-    padding: 3px 8px;
-  }
-
-  .entry-row {
-    gap: 10px;
-    margin-bottom: 7px;
-  }
-
-  .entry-date-col {
-    width: 72px;
-    font-size: 11px;
-  }
-
-  .entry-desc {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  .skill-section {
-    padding-top: 12px;
-  }
-
-  .skill-section h3 {
-    font-size: 11px;
-    margin-bottom: 10px;
-  }
-
-  .skill-chips {
-    gap: 8px;
-  }
-
-  .chip {
-    min-width: 58px;
-    padding: 8px 12px;
-    border-radius: 6px;
-  }
-
-  .chip .chip-name {
-    font-size: 11px;
-  }
-
-  .chip .chip-level {
-    font-size: 9px;
-  }
-
-  .brand {
-    top: 14px;
-    right: 18px;
-    font-size: 9px;
+    gap: 20px;
   }
 }
