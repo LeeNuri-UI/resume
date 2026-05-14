@@ -1,0 +1,176 @@
+.page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.v-bar {
+  width: var(--bar-w);
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  flex-shrink: 0;
+}
+
+.v-bar .year {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.v-bar .label {
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  letter-spacing: 3.6px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.top-band {
+  width: 100%;
+  height: 38%;
+  background: var(--peach);
+  flex-shrink: 0;
+}
+
+.bottom-section {
+  flex: 1;
+  background: var(--white);
+  position: relative;
+}
+
+.hero {
+  position: absolute;
+  top: 28%;
+  left: 56px;
+  transform: translateY(-50%);
+}
+
+.hero h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 96px);
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.hero h1 .dot {
+  color: var(--navy);
+}
+
+.hero .subtitle {
+  margin-top: 18px;
+  font-size: clamp(12px, 1.2vw, 15px);
+  color: #666;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+.info-block {
+  position: absolute;
+  bottom: 44px;
+  right: 60px;
+  display: flex;
+  gap: 72px;
+  align-items: flex-start;
+}
+
+.info-col h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.info-col .divider {
+  width: 34px;
+  height: 3px;
+  background: var(--navy);
+  margin-bottom: 14px;
+}
+
+.info-col p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.page-num {
+  position: absolute;
+  bottom: 44px;
+  left: 56px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #bbb;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    left: 28px;
+  }
+
+  .info-block {
+    right: 28px;
+    bottom: 32px;
+    gap: 34px;
+  }
+
+  .page-num {
+    left: 28px;
+    bottom: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .content {
+    min-height: 100vh;
+  }
+
+  .hero {
+    top: 25%;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 15vw, 64px);
+    letter-spacing: -1px;
+  }
+
+  .info-block {
+    left: 28px;
+    right: auto;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  .page-num {
+    left: auto;
+    right: 28px;
+  }
+}
