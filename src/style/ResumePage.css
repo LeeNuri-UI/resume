@@ -1,0 +1,450 @@
+.page-deck {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+}
+
+.page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.v-bar {
+  width: var(--bar-w);
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  flex-shrink: 0;
+}
+
+.v-bar .year {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.v-bar .label {
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  letter-spacing: 3.6px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+/* ── 메인 콘텐츠 ─────────────────────────────────── */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 상단 피치 장식 삼각형 */
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 265px; height: 265px;
+  background: var(--peach);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 0;
+}
+
+/* ── 우측 상단 브랜드 ─────────────────────────────── */
+.brand {
+  position: absolute;
+  top: 22px; right: 36px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #aaa;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  z-index: 10;
+}
+
+/* ── 내부 스크롤 영역 ─────────────────────────────── */
+.resume-inner {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+
+  padding: 60px 50px 50px 60px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── 섹션 헤더 ───────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+.section-header h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -1px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--sub);
+  font-weight: 300;
+  padding-bottom: 13px;
+}
+.desc strong {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ── 2단 그리드 ───────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* ── 프로필 카드 ─────────────────────────────────── */
+.profile-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: grayscale(30%);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.profile-info .name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+}
+.profile-info .role {
+  font-size: 14px;
+  color: var(--sub);
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.profile-info .meta {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* ── 타임라인 (학력) ─────────────────────────────── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 20px;
+}
+.tl-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid #ebe8e3;
+  position: relative;
+}
+.tl-item:last-child { border-bottom: 1px solid #ebe8e3; }
+
+.tl-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--navy);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.tl-date {
+  font-size: 14px;
+  color: var(--sub);
+  white-space: nowrap;
+  font-weight: 300;
+  width: 105px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.tl-text {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.6;
+}
+.tl-text.muted {
+  color: #999;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* ── 우측 패널 ───────────────────────────────────── */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* 경력/수상 박스 */
+.info-box {
+  background: var(--gray-bg);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.info-box-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.info-box-header .badge {
+  background: var(--navy);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.info-box-header .divider-h {
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.entry-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 9px;
+}
+.entry-row:last-child { margin-bottom: 0; }
+.entry-date-col {
+  font-size: 12.5px;
+  color: var(--sub);
+  white-space: nowrap;
+  font-weight: 300;
+  width: 88px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+.entry-desc {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ── SKILL 섹션 ──────────────────────────────────── */
+.skill-section {
+  border-top: 2px solid var(--navy);
+  padding-top: 16px;
+}
+.skill-section h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--navy);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.skill-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chip {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 12px 18px;
+  text-align: center;
+  min-width: 72px;
+}
+.chip .chip-name {
+  font-size: 13px;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 0.3px;
+}
+.chip .chip-level {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  margin-top: 3px;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .resume-inner {
+    padding: 24px 18px;
+    gap: 16px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-header h1 {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+
+  .desc {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .profile-card {
+    gap: 14px;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 82px;
+    height: 82px;
+  }
+
+  .profile-info .name {
+    font-size: 16px;
+  }
+
+  .profile-info .role {
+    font-size: 12px;
+  }
+
+  .profile-info .meta {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .timeline {
+    margin-top: 0;
+  }
+
+  .tl-item {
+    gap: 8px;
+    padding: 7px 0;
+  }
+
+  .tl-date {
+    width: 82px;
+    font-size: 11px;
+  }
+
+  .tl-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .tl-text.muted {
+    font-size: 11px;
+  }
+
+  .info-box {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .info-box-header {
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .info-box-header .badge {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .entry-row {
+    gap: 10px;
+    margin-bottom: 7px;
+  }
+
+  .entry-date-col {
+    width: 72px;
+    font-size: 11px;
+  }
+
+  .entry-desc {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .skill-section {
+    padding-top: 12px;
+  }
+
+  .skill-section h3 {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .skill-chips {
+    gap: 8px;
+  }
+
+  .chip {
+    min-width: 58px;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+  .chip .chip-name {
+    font-size: 11px;
+  }
+
+  .chip .chip-level {
+    font-size: 9px;
+  }
+
+  .brand {
+    top: 14px;
+    right: 18px;
+    font-size: 9px;
+  }
+}

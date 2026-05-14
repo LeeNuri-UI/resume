@@ -1,7 +1,19 @@
+.page-deck {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+}
+
 .page {
   display: flex;
   width: 100vw;
   height: 100vh;
+  flex-shrink: 0;
 }
 
 .v-bar {
@@ -174,3 +186,4 @@
     right: 28px;
   }
 }
+
